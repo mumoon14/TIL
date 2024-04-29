@@ -9,11 +9,9 @@ class Solution {
         map.put('C', 100);
         map.put('D', 500);
         map.put('M', 1000);
-
         if (sLen == 1) {
             return map.get(s.charAt(0));
         }
-
         int rtnNum = 0;
         for (int i = 1; i < sLen; i++) {
             int preNum = map.get(s.charAt(i - 1));
