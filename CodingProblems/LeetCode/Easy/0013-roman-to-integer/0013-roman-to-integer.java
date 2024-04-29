@@ -9,20 +9,14 @@ class Solution {
         map.put("D", 500);
         map.put("M", 1000);
 
-        List<Integer> list = new ArrayList<>();
-        for (String ss : s.split("")) {
-            list.add(map.get(ss));
+        if (s.length() == 1) {
+            return map.get(s);
         }
 
         int rtnNum = 0;
-
-        if (list.size() == 1) {
-            return list.get(0);
-        }
-
-        for (int i = 1; i < list.size(); i++) {
-            int preNum = list.get(i - 1);
-            int nextNum = list.get(i);
+        for (int i = 1; i < s.length(); i++) {
+            int preNum = map.get(Character.toString(s.charAt(i - 1)));
+            int nextNum = map.get(Character.toString(s.charAt(i)));
             
             if (preNum >= nextNum) {
                 rtnNum += preNum;
@@ -30,7 +24,7 @@ class Solution {
                 rtnNum -= preNum;
             }
 
-            if (list.size() - 1 == i) {
+            if (s.length() - 1 == i) {
                 rtnNum += nextNum;
             }
         }
