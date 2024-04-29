@@ -15,9 +15,11 @@ class Solution {
         }
 
         int rtnNum = 0;
+        int preNum = 0;
+        int nextNum = 0;
         for (int i = 1; i < sLen; i++) {
-            int preNum = map.get(s.charAt(i - 1));
-            int nextNum = map.get(s.charAt(i));
+            preNum = map.get(s.charAt(i - 1));
+            nextNum = map.get(s.charAt(i));
             
             if (preNum >= nextNum) {
                 rtnNum += preNum;
