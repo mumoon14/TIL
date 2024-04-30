@@ -12,7 +12,7 @@ class Solution {
             }
             if (isBreak) break;
         }
-        if(sb.length() > 0 && strs.length > 1 && isBreak = true) sb.deleteCharAt(sb.length() - 1);
+        if(sb.length() > 0 && strs.length > 1 && isBreak == true) sb.deleteCharAt(sb.length() - 1);
         return sb.toString();
     }
 }
